@@ -22,7 +22,6 @@ def register(request):
         request.session['logged_in'] = True
         request.session['name'] = user.first_name
         request.session['id'] = user.id
-        messages.success(request, "Successfully logged in! (or registered)")
         return redirect('/wall')
     else:
         return redirect('/')
